@@ -135,6 +135,7 @@
             this.picEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picEye.TabIndex = 46;
             this.picEye.TabStop = false;
+            this.picEye.Click += new System.EventHandler(this.picEye_Click_1);
             // 
             // picHide
             // 

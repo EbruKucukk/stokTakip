@@ -158,5 +158,13 @@ namespace StokTakip0
             }
             con.Close();
         }
+
+        private void picEye_Click_1(object sender, EventArgs e)
+        {
+            //şifreyi gözükür yapmak için
+            txtSifre.UseSystemPasswordChar = false;
+            picEye.Visible = false;
+            picHide.Visible = true;
+        }
     }
 }

@@ -43,7 +43,7 @@ namespace StokTakip0
             cmd.Connection = con;  //cmd nesnesini ve con nesnesini birbirine bağlar
 
             //Ürün ID textbox'ına girilen sayıyı veritabanından çeker
-            cmd.CommandText = "SELECT urunCesidi AS 'Ürün Çeşidi', urunBarkodu AS 'Ürün Barkodu', urunBoyutu AS 'Ürün Bedeni', urunAdedi AS 'Talep Miktarı', talepTarihi AS 'Talep Tarihi', onayDurum AS 'Onay Durumu', stoklamaDurum AS 'Stokla' FROM talepStok ";
+            cmd.CommandText = "SELECT urunCesidi AS 'Ürün Çeşidi', urunBarkodu AS 'Ürün Barkodu', urunBoyutu AS 'Ürün Bedeni', urunAdedi AS 'Talep Miktarı', talepTarihi AS 'Talep Tarihi', onayDurum AS 'Onay Durumu', stoklamaDurum AS 'Stokla' FROM talepStok WHERE onayDurum = 'Onaylanmadı'";
             SqlDataAdapter DA = new SqlDataAdapter(cmd);
             DataSet DS = new DataSet();
             DA.Fill(DS);
@@ -79,7 +79,7 @@ namespace StokTakip0
             cmd2.Connection = con;  //cmd nesnesini ve con nesnesini birbirine bağlar
 
             //Ürün ID textbox'ına girilen sayıyı veritabanından çeker
-            cmd2.CommandText = "SELECT urunCesidi AS 'Ürün Çeşidi', urunBoyutu AS 'Ürün Bedeni', urunAdedi AS 'Talep Miktarı', onayDurum AS 'Onay Durumu', stoklamaDurum AS 'Stokla' FROM talepStok WHERE onayDurum = 'Onaylandı'";
+            cmd2.CommandText = "SELECT urunCesidi AS 'Ürün Çeşidi', urunBarkodu AS 'Ürün Barkodu', urunBoyutu AS 'Ürün Bedeni', urunAdedi AS 'Talep Miktarı', talepTarihi AS 'Talep Tarihi', onayDurum AS 'Onay Durumu', stoklamaDurum AS 'Stokla' FROM talepStok WHERE onayDurum = 'Onaylandı'";
             SqlDataAdapter DA2 = new SqlDataAdapter(cmd2);
             DataSet DS2 = new DataSet();
             DA2.Fill(DS2);
@@ -90,13 +90,15 @@ namespace StokTakip0
             //2. datagridvievwun görsel ayarları için kod satırları
             onayTablo.EnableHeadersVisualStyles = false;
             onayTablo.ColumnHeadersDefaultCellStyle.BackColor = lacivert;
-            onayTablo.Columns[4].DefaultCellStyle.BackColor = Color.Lavender;
-            onayTablo.Columns[3].DefaultCellStyle.BackColor = Color.Teal;
+            onayTablo.Columns[6].DefaultCellStyle.BackColor = Color.Lavender;
+            onayTablo.Columns[5].DefaultCellStyle.BackColor = Color.Teal;
+            onayTablo.Columns[4].DefaultCellStyle.BackColor = Color.Snow;
+            onayTablo.Columns[3].DefaultCellStyle.BackColor = Color.Snow;
             onayTablo.Columns[2].DefaultCellStyle.BackColor = Color.Snow;
             onayTablo.Columns[1].DefaultCellStyle.BackColor = Color.Snow;
             onayTablo.Columns[0].DefaultCellStyle.BackColor = Color.Snow;
-            onayTablo.Columns[3].DefaultCellStyle.ForeColor = Color.White;
             onayTablo.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            onayTablo.Columns[5].DefaultCellStyle.ForeColor = Color.White;
 
             onayTablo.ColumnHeadersDefaultCellStyle.Font = new Font("tahoma", 13);
             onayTablo.Columns[0].DefaultCellStyle.Font = new Font("Verdana", 10);
@@ -137,7 +139,9 @@ namespace StokTakip0
             cmd.ExecuteNonQuery();
             con.Close();
 
-            MessageBox.Show("Stok Onaylandı!");
+            lblmesaj.Visible = true;
+            lblmesaj.ForeColor = Color.Green;
+            lblmesaj.Text = "Stok Onaylandı!";
         }
         private void talepTablo_CellValueChanged_1(object sender, DataGridViewCellEventArgs e)
         {
@@ -204,13 +208,25 @@ namespace StokTakip0
             cmd.Connection = con;  //cmd nesnesini ve con nesnesini birbirine bağlar
 
             //Ürün ID textbox'ına girilen sayıyı veritabanından çeker
-            cmd.CommandText = "SELECT urunCesidi AS 'Ürün Çeşidi', urunBoyutu AS 'Ürün Bedeni', urunAdedi AS 'Talep Miktarı', onayDurum AS 'Onay Durumu', stoklamaDurum AS 'Stokla' FROM talepStok WHERE onayDurum = 'Onaylandı'";
+            cmd.CommandText = "SELECT urunCesidi AS 'Ürün Çeşidi', urunBoyutu AS 'Ürün Bedeni',urunBarkodu AS 'Ürün Barkodu', urunAdedi AS 'Talep Miktarı', onayDurum AS 'Onay Durumu', stoklamaDurum AS 'Stokla', talepTarihi AS 'Talep Tarihi' FROM talepStok WHERE onayDurum = 'Onaylandı'";
             SqlDataAdapter DA = new SqlDataAdapter(cmd);
             DataSet DS = new DataSet();
             DA.Fill(DS);
 
             onayTablo.DataSource = DS.Tables[0];
             onayTablo.AllowUserToAddRows = false;
+
+            SqlCommand cmd2 = new SqlCommand(); // cmd isimli sql komut nesnesini oluşturur
+            cmd2.Connection = con;  //cmd nesnesini ve con nesnesini birbirine bağlar
+
+            //Ürün ID textbox'ına girilen sayıyı veritabanından çeker
+            cmd2.CommandText = "SELECT urunCesidi AS 'Ürün Çeşidi', urunBoyutu AS 'Ürün Bedeni',urunBarkodu AS 'Ürün Barkodu', urunAdedi AS 'Talep Miktarı', onayDurum AS 'Onay Durumu', stoklamaDurum AS 'Stokla', talepTarihi AS 'Talep Tarihi' FROM talepStok WHERE onayDurum = 'Onaylanmadı'";
+            SqlDataAdapter DA2 = new SqlDataAdapter(cmd2);
+            DataSet DS2 = new DataSet();
+            DA2.Fill(DS2);
+
+            talepTablo.DataSource = DS2.Tables[0];
+            talepTablo.AllowUserToAddRows = false;
         }
 
         private void onayTablo_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -221,10 +237,10 @@ namespace StokTakip0
 
         private void onayTablo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var columnIndex = 4;
+            var columnIndex = 6;
             if (e.ColumnIndex == columnIndex)
             {
-                //2. datagridviewda 4. satır yani stoklama durumu seçildiğinde 'true' olduğunda kutucukları ve sipariş onaylama butonlarını görünür hale getirir
+                //2. datagridviewda 6. satır yani stoklama durumu seçildiğinde 'true' olduğunda kutucukları ve sipariş onaylama butonlarını görünür hale getirir
                 var isChecked = (bool)onayTablo.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
                 if (isChecked)
                 {
@@ -242,7 +258,7 @@ namespace StokTakip0
                     panel3.Visible = true;
                 }
             }
-            if (e.RowIndex >= 0 && e.ColumnIndex == 4)
+            if (e.RowIndex >= 0 && e.ColumnIndex == 6)
             {
                 // eğer 2. datagridviewda 4. satırdaki stok durumu kutucuklarından biri seçiliyse yani ture ise diğerlerini false yani boş yapar
                 //bu sayede girişte aynı anda birkaç ürün seçili gözükmez
@@ -250,24 +266,64 @@ namespace StokTakip0
                 {
                     if (row.Index == e.RowIndex)
                     {
-                        row.Cells[4].Value = !Convert.ToBoolean(row.Cells[4].EditedFormattedValue);
+                        row.Cells[6].Value = !Convert.ToBoolean(row.Cells[6].EditedFormattedValue);
                     }
                     else
                     {
-                        row.Cells[4].Value = false;
+                        row.Cells[6].Value = false;
                     }
                 }
                 //2. datagridview için kutucuğunu seçtiğimiz satırdaki değerleri otomatik olarak veritabanından aşağıdaki sipariş onaylama formuna aktarır
                 if (onayTablo.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
-                    onayTablo.CurrentRow.Cells[4].Selected = true;
+                    onayTablo.CurrentRow.Cells[6].Selected = true;
                     urunCesidi.Text = onayTablo.Rows[e.RowIndex].Cells[0].Value.ToString();
-                    urunBoyutu.Text = onayTablo.Rows[e.RowIndex].Cells[1].Value.ToString();
-                    urunAdedi.Text = onayTablo.Rows[e.RowIndex].Cells[2].Value.ToString();
-                    urunID.Text = talepTablo.Rows[e.RowIndex].Cells[1].Value.ToString();
-                    tarih.Text = talepTablo.Rows[e.RowIndex].Cells[4].Value.ToString();
+                    urunBoyutu.Text = onayTablo.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    urunAdedi.Text = onayTablo.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    urunID.Text = onayTablo.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    tarih.Text = onayTablo.Rows[e.RowIndex].Cells[4].Value.ToString();
                 }
             }
+        }
+
+        private void tarih_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iptalBtn_Click(object sender, EventArgs e)
+        {
+            //onayla butonuna bastığımızda aşağıdaki kodu döndürürüz ve istenilen stok artık onaylanmış olur
+            //yani database verileri update'lenir
+
+            //Onaylandı yazısını veritabanına aktarmak için onay nesnesi oluşturulur
+            string onay2 = "Onaylanmadı";
+            //True değerini veritabanında stoklama durumuna atıp seçili yapmak için içine 1 atılan secili nesnesi oluşturulur
+            int secili2 = 0;
+
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-SN77AA1;Initial Catalog=stokTakip;Integrated Security=True");  //sql bağlantısını sağlayan con nesnesini oluşturur
+            SqlCommand cmd = new SqlCommand(); // cmd isimli sql komut nesnesini oluşturur
+            cmd.Connection = con;  //cmd nesnesini ve con nesnesini birbirine bağlar
+            con.Open();
+            //Ürün ID textbox'ına girilen sayıyı veritabanından çeker
+
+            //AND talepTarihi = '"+tarih.Text+"' burası sonra sql sorgusuna katmak için
+
+            ////bilgileri kutuda yazan ürün değerleri için onay durumuna Onaylandı yazdıran ve stok durumunu true yani seçili yapan kod
+            cmd.CommandText = "UPDATE talepStok SET OnayDurum = @OnayDurumu, stoklamaDurum = @stokDurumu WHERE urunCesidi = '" + urunCesidi.Text + "' AND urunBarkodu = '" + urunID.Text + "' AND urunBoyutu = '" + urunBoyutu.Text + "' AND urunAdedi = '" + urunAdedi.Text + "' ";
+            cmd.Parameters.AddWithValue("@OnayDurumu", onay2);
+            cmd.Parameters.AddWithValue("@stokDurumu", secili2);
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+            lblmesaj.Visible = true;
+            lblmesaj.ForeColor = Color.Green;
+            lblmesaj.Text = "İptal Edildi";
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
