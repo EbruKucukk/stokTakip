@@ -16,7 +16,7 @@ namespace StokTakip0
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DepoSorumlusuKontrol());
+            Application.Run(new FirmalarKontrol());
         }
     }
 }

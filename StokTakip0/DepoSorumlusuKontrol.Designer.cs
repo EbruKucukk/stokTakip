@@ -54,9 +54,9 @@
             this.picEye = new System.Windows.Forms.PictureBox();
             this.picEye2 = new System.Windows.Forms.PictureBox();
             this.birimAdres = new System.Windows.Forms.RichTextBox();
-            this.firmaButon = new System.Windows.Forms.Button();
+            this.silButonPersonel = new System.Windows.Forms.Button();
             this.ekleBtn1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buton4 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -69,6 +69,11 @@
             this.picHide2 = new System.Windows.Forms.PictureBox();
             this.ekleBtn2 = new System.Windows.Forms.Button();
             this.ekleBtn3 = new System.Windows.Forms.Button();
+            this.lblmesaj = new System.Windows.Forms.Label();
+            this.silButonDepo = new System.Windows.Forms.Button();
+            this.buton3 = new System.Windows.Forms.Button();
+            this.butonGuncellePersonel = new System.Windows.Forms.Button();
+            this.butonGuncelleDepo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picGeri)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
@@ -132,6 +137,8 @@
             // 
             this.birimTablo.AllowUserToAddRows = false;
             this.birimTablo.AllowUserToDeleteRows = false;
+            this.birimTablo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.birimTablo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.birimTablo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.birimTablo.Location = new System.Drawing.Point(429, 184);
             this.birimTablo.Name = "birimTablo";
@@ -162,6 +169,7 @@
             this.txtBirimAd.Name = "txtBirimAd";
             this.txtBirimAd.Size = new System.Drawing.Size(176, 19);
             this.txtBirimAd.TabIndex = 3;
+            this.txtBirimAd.TextChanged += new System.EventHandler(this.txtBirimAd_TextChanged);
             // 
             // txtTCNo
             // 
@@ -361,7 +369,7 @@
             // 
             this.picEye2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picEye2.Image = ((System.Drawing.Image)(resources.GetObject("picEye2.Image")));
-            this.picEye2.Location = new System.Drawing.Point(390, 396);
+            this.picEye2.Location = new System.Drawing.Point(388, 396);
             this.picEye2.Margin = new System.Windows.Forms.Padding(2);
             this.picEye2.Name = "picEye2";
             this.picEye2.Size = new System.Drawing.Size(23, 22);
@@ -372,6 +380,7 @@
             // 
             // birimAdres
             // 
+            this.birimAdres.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.birimAdres.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.birimAdres.Location = new System.Drawing.Point(25, 459);
             this.birimAdres.Name = "birimAdres";
@@ -379,19 +388,21 @@
             this.birimAdres.TabIndex = 59;
             this.birimAdres.Text = "";
             // 
-            // firmaButon
+            // silButonPersonel
             // 
-            this.firmaButon.BackColor = System.Drawing.Color.DarkRed;
-            this.firmaButon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.firmaButon.FlatAppearance.BorderSize = 0;
-            this.firmaButon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.firmaButon.ForeColor = System.Drawing.Color.White;
-            this.firmaButon.Location = new System.Drawing.Point(283, 553);
-            this.firmaButon.Name = "firmaButon";
-            this.firmaButon.Size = new System.Drawing.Size(113, 38);
-            this.firmaButon.TabIndex = 60;
-            this.firmaButon.Text = "Sil";
-            this.firmaButon.UseVisualStyleBackColor = false;
+            this.silButonPersonel.BackColor = System.Drawing.Color.DarkRed;
+            this.silButonPersonel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.silButonPersonel.FlatAppearance.BorderSize = 0;
+            this.silButonPersonel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.silButonPersonel.ForeColor = System.Drawing.Color.White;
+            this.silButonPersonel.Location = new System.Drawing.Point(283, 553);
+            this.silButonPersonel.Name = "silButonPersonel";
+            this.silButonPersonel.Size = new System.Drawing.Size(113, 38);
+            this.silButonPersonel.TabIndex = 60;
+            this.silButonPersonel.Text = "Sil";
+            this.silButonPersonel.UseVisualStyleBackColor = false;
+            this.silButonPersonel.Visible = false;
+            this.silButonPersonel.Click += new System.EventHandler(this.silButonPersonel_Click);
             // 
             // ekleBtn1
             // 
@@ -409,19 +420,19 @@
             this.ekleBtn1.Visible = false;
             this.ekleBtn1.Click += new System.EventHandler(this.ekleBtn1_Click);
             // 
-            // button2
+            // buton4
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(26)))), ((int)(((byte)(61)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(153, 553);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 38);
-            this.button2.TabIndex = 62;
-            this.button2.Text = "Güncelle";
-            this.button2.UseVisualStyleBackColor = false;
+            this.buton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(26)))), ((int)(((byte)(61)))));
+            this.buton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buton4.FlatAppearance.BorderSize = 0;
+            this.buton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.buton4.ForeColor = System.Drawing.Color.White;
+            this.buton4.Location = new System.Drawing.Point(153, 553);
+            this.buton4.Name = "buton4";
+            this.buton4.Size = new System.Drawing.Size(116, 38);
+            this.buton4.TabIndex = 62;
+            this.buton4.Text = "Güncelle";
+            this.buton4.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
@@ -520,7 +531,7 @@
             this.ekleBtn2.FlatAppearance.BorderSize = 0;
             this.ekleBtn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ekleBtn2.ForeColor = System.Drawing.Color.White;
-            this.ekleBtn2.Location = new System.Drawing.Point(131, 597);
+            this.ekleBtn2.Location = new System.Drawing.Point(37, 553);
             this.ekleBtn2.Name = "ekleBtn2";
             this.ekleBtn2.Size = new System.Drawing.Size(110, 38);
             this.ekleBtn2.TabIndex = 90;
@@ -536,12 +547,88 @@
             this.ekleBtn3.FlatAppearance.BorderSize = 0;
             this.ekleBtn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ekleBtn3.ForeColor = System.Drawing.Color.White;
-            this.ekleBtn3.Location = new System.Drawing.Point(247, 597);
+            this.ekleBtn3.Location = new System.Drawing.Point(37, 553);
             this.ekleBtn3.Name = "ekleBtn3";
             this.ekleBtn3.Size = new System.Drawing.Size(110, 38);
             this.ekleBtn3.TabIndex = 91;
             this.ekleBtn3.Text = "Ekle";
             this.ekleBtn3.UseVisualStyleBackColor = false;
+            // 
+            // lblmesaj
+            // 
+            this.lblmesaj.AutoSize = true;
+            this.lblmesaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblmesaj.ForeColor = System.Drawing.Color.Red;
+            this.lblmesaj.Location = new System.Drawing.Point(88, 610);
+            this.lblmesaj.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblmesaj.Name = "lblmesaj";
+            this.lblmesaj.Size = new System.Drawing.Size(240, 20);
+            this.lblmesaj.TabIndex = 92;
+            this.lblmesaj.Text = "Lütfen Bilgilerinizi Kontrol Ediniz !";
+            this.lblmesaj.Visible = false;
+            // 
+            // silButonDepo
+            // 
+            this.silButonDepo.BackColor = System.Drawing.Color.DarkRed;
+            this.silButonDepo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.silButonDepo.FlatAppearance.BorderSize = 0;
+            this.silButonDepo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.silButonDepo.ForeColor = System.Drawing.Color.White;
+            this.silButonDepo.Location = new System.Drawing.Point(283, 553);
+            this.silButonDepo.Name = "silButonDepo";
+            this.silButonDepo.Size = new System.Drawing.Size(113, 38);
+            this.silButonDepo.TabIndex = 93;
+            this.silButonDepo.Text = "Sil";
+            this.silButonDepo.UseVisualStyleBackColor = false;
+            this.silButonDepo.Visible = false;
+            this.silButonDepo.Click += new System.EventHandler(this.silButonDepo_Click);
+            // 
+            // buton3
+            // 
+            this.buton3.BackColor = System.Drawing.Color.DarkRed;
+            this.buton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buton3.FlatAppearance.BorderSize = 0;
+            this.buton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.buton3.ForeColor = System.Drawing.Color.White;
+            this.buton3.Location = new System.Drawing.Point(283, 553);
+            this.buton3.Name = "buton3";
+            this.buton3.Size = new System.Drawing.Size(113, 38);
+            this.buton3.TabIndex = 94;
+            this.buton3.Text = "Sil";
+            this.buton3.UseVisualStyleBackColor = false;
+            this.buton3.Click += new System.EventHandler(this.buton3_Click);
+            // 
+            // butonGuncellePersonel
+            // 
+            this.butonGuncellePersonel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(26)))), ((int)(((byte)(61)))));
+            this.butonGuncellePersonel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.butonGuncellePersonel.FlatAppearance.BorderSize = 0;
+            this.butonGuncellePersonel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.butonGuncellePersonel.ForeColor = System.Drawing.Color.White;
+            this.butonGuncellePersonel.Location = new System.Drawing.Point(153, 553);
+            this.butonGuncellePersonel.Name = "butonGuncellePersonel";
+            this.butonGuncellePersonel.Size = new System.Drawing.Size(116, 38);
+            this.butonGuncellePersonel.TabIndex = 95;
+            this.butonGuncellePersonel.Text = "Güncelle";
+            this.butonGuncellePersonel.UseVisualStyleBackColor = false;
+            this.butonGuncellePersonel.Visible = false;
+            this.butonGuncellePersonel.Click += new System.EventHandler(this.butonGuncellePersonel_Click);
+            // 
+            // butonGuncelleDepo
+            // 
+            this.butonGuncelleDepo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(26)))), ((int)(((byte)(61)))));
+            this.butonGuncelleDepo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.butonGuncelleDepo.FlatAppearance.BorderSize = 0;
+            this.butonGuncelleDepo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.butonGuncelleDepo.ForeColor = System.Drawing.Color.White;
+            this.butonGuncelleDepo.Location = new System.Drawing.Point(153, 553);
+            this.butonGuncelleDepo.Name = "butonGuncelleDepo";
+            this.butonGuncelleDepo.Size = new System.Drawing.Size(116, 38);
+            this.butonGuncelleDepo.TabIndex = 96;
+            this.butonGuncelleDepo.Text = "Güncelle";
+            this.butonGuncelleDepo.UseVisualStyleBackColor = false;
+            this.butonGuncelleDepo.Visible = false;
+            this.butonGuncelleDepo.Click += new System.EventHandler(this.butonGuncelleDepo_Click);
             // 
             // DepoSorumlusuKontrol
             // 
@@ -549,6 +636,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(989, 667);
+            this.Controls.Add(this.butonGuncelleDepo);
+            this.Controls.Add(this.butonGuncellePersonel);
+            this.Controls.Add(this.buton3);
+            this.Controls.Add(this.silButonDepo);
+            this.Controls.Add(this.lblmesaj);
             this.Controls.Add(this.ekleBtn3);
             this.Controls.Add(this.ekleBtn2);
             this.Controls.Add(this.panel8);
@@ -559,9 +651,9 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buton4);
             this.Controls.Add(this.ekleBtn1);
-            this.Controls.Add(this.firmaButon);
+            this.Controls.Add(this.silButonPersonel);
             this.Controls.Add(this.birimAdres);
             this.Controls.Add(this.picEye2);
             this.Controls.Add(this.label10);
@@ -633,9 +725,9 @@
         private System.Windows.Forms.PictureBox picEye;
         private System.Windows.Forms.PictureBox picEye2;
         private System.Windows.Forms.RichTextBox birimAdres;
-        private System.Windows.Forms.Button firmaButon;
+        private System.Windows.Forms.Button silButonPersonel;
         private System.Windows.Forms.Button ekleBtn1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buton4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
@@ -648,5 +740,10 @@
         private System.Windows.Forms.PictureBox picHide2;
         private System.Windows.Forms.Button ekleBtn2;
         private System.Windows.Forms.Button ekleBtn3;
+        private System.Windows.Forms.Label lblmesaj;
+        private System.Windows.Forms.Button silButonDepo;
+        private System.Windows.Forms.Button buton3;
+        private System.Windows.Forms.Button butonGuncellePersonel;
+        private System.Windows.Forms.Button butonGuncelleDepo;
     }
 }

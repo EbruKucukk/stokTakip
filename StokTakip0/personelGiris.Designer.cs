@@ -128,7 +128,7 @@
             // 
             this.picEye.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picEye.Image = ((System.Drawing.Image)(resources.GetObject("picEye.Image")));
-            this.picEye.Location = new System.Drawing.Point(516, 479);
+            this.picEye.Location = new System.Drawing.Point(516, 480);
             this.picEye.Margin = new System.Windows.Forms.Padding(2);
             this.picEye.Name = "picEye";
             this.picEye.Size = new System.Drawing.Size(20, 22);

@@ -197,6 +197,8 @@
             // 
             // stokDurumuTablo
             // 
+            this.stokDurumuTablo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.stokDurumuTablo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.stokDurumuTablo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.stokDurumuTablo.Location = new System.Drawing.Point(45, 186);
             this.stokDurumuTablo.Name = "stokDurumuTablo";

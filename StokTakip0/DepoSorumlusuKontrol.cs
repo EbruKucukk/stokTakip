@@ -25,7 +25,7 @@ namespace StokTakip0
         private void kayitGetirPersonel()
         {
             baglanti.Open();
-            string kayit = "SELECT personelAd AS 'Ad', personelSoyad AS 'Soyad', personelSifre AS 'Şifre',personelEposta AS 'E Posta', personelTelNo AS 'Tel No', personelAdres AS 'Adres', personelID AS 'ID', personelTC AS 'TC Kimlik' From personel";
+            string kayit = "SELECT personelAd AS 'Ad', personelSoyad AS 'Soyad', personelSifre AS 'Şifre',personelEposta AS 'E Posta', personelTelNo AS 'Tel No', personelAdres AS 'Adres', personelTC AS 'TC Kimlik' From personel";
             //musteriler tablosundaki tüm kayıtları çekecek olan sql sorgusu.
             SqlCommand komut = new SqlCommand(kayit, baglanti);
             //Sorgumuzu ve baglantimizi parametre olarak alan bir SqlCommand nesnesi oluşturuyoruz.
@@ -37,11 +37,32 @@ namespace StokTakip0
             birimTablo.DataSource = dt;
             //Formumuzdaki DataGridViewin veri kaynağını oluşturduğumuz tablo olarak gösteriyoruz.
             baglanti.Close();
+
+            birimTablo.EnableHeadersVisualStyles = false;
+            Color lacivert = ColorTranslator.FromHtml("#031A3D");
+            birimTablo.ColumnHeadersDefaultCellStyle.BackColor = lacivert;
+            birimTablo.Columns[6].DefaultCellStyle.BackColor = Color.Lavender;
+            birimTablo.Columns[5].DefaultCellStyle.BackColor = Color.Lavender;
+            birimTablo.Columns[4].DefaultCellStyle.BackColor = Color.Lavender;
+            birimTablo.Columns[3].DefaultCellStyle.BackColor = Color.Lavender;
+            birimTablo.Columns[2].DefaultCellStyle.BackColor = Color.Lavender;
+            birimTablo.Columns[1].DefaultCellStyle.BackColor = Color.Lavender;
+            birimTablo.Columns[0].DefaultCellStyle.BackColor = Color.Lavender;
+            birimTablo.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            birimTablo.ColumnHeadersDefaultCellStyle.Font = new Font("tahoma", 11);
+            birimTablo.Columns[0].DefaultCellStyle.Font = new Font("Verdana", 10);
+            birimTablo.Columns[1].DefaultCellStyle.Font = new Font("Verdana", 10);
+            birimTablo.Columns[2].DefaultCellStyle.Font = new Font("Verdana", 10);
+            birimTablo.Columns[3].DefaultCellStyle.Font = new Font("Verdana", 10);
+            birimTablo.Columns[4].DefaultCellStyle.Font = new Font("Verdana", 10);
+            birimTablo.Columns[5].DefaultCellStyle.Font = new Font("Verdana", 10);
+            birimTablo.Columns[6].DefaultCellStyle.Font = new Font("Verdana", 10);
         }
         private void kayitGetirDepoSorumlusu()
         {
             baglanti.Open();
-            string kayit = "SELECT depoSorumlusuAd AS 'Ad', depoSorumlusuSoyad AS 'Soyad', depoSorumlusuSifre AS 'Şifre', depoSorumlusuEposta AS 'E Posta', depoSorumlusuTelNo AS 'Tel No', depoSorumlusuAdres AS 'Adres', depoSorumlusuID AS 'ID', depoSorumlusuTC AS 'TC Kimlik' FROM depoSorumlusu";
+            string kayit = "SELECT depoSorumlusuAd AS 'Ad', depoSorumlusuSoyad AS 'Soyad', depoSorumlusuSifre AS 'Şifre', depoSorumlusuEposta AS 'E Posta', depoSorumlusuTelNo AS 'Tel No', depoSorumlusuAdres AS 'Adres', depoSorumlusuTC AS 'TC Kimlik' FROM depoSorumlusu";
             //musteriler tablosundaki tüm kayıtları çekecek olan sql sorgusu.
             SqlCommand komut = new SqlCommand(kayit, baglanti);
             //Sorgumuzu ve baglantimizi parametre olarak alan bir SqlCommand nesnesi oluşturuyoruz.
@@ -53,10 +74,31 @@ namespace StokTakip0
             birimTablo.DataSource = dt;
             //Formumuzdaki DataGridViewin veri kaynağını oluşturduğumuz tablo olarak gösteriyoruz.
             baglanti.Close();
+
+            birimTablo.EnableHeadersVisualStyles = false;
+            Color lacivert = ColorTranslator.FromHtml("#031A3D");
+            birimTablo.ColumnHeadersDefaultCellStyle.BackColor = lacivert;
+            birimTablo.Columns[6].DefaultCellStyle.BackColor = Color.Lavender;
+            birimTablo.Columns[5].DefaultCellStyle.BackColor = Color.Lavender;
+            birimTablo.Columns[4].DefaultCellStyle.BackColor = Color.Lavender;
+            birimTablo.Columns[3].DefaultCellStyle.BackColor = Color.Lavender;
+            birimTablo.Columns[2].DefaultCellStyle.BackColor = Color.Lavender;
+            birimTablo.Columns[1].DefaultCellStyle.BackColor = Color.Lavender;
+            birimTablo.Columns[0].DefaultCellStyle.BackColor = Color.Lavender;
+            birimTablo.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            birimTablo.ColumnHeadersDefaultCellStyle.Font = new Font("tahoma", 11);
+            birimTablo.Columns[0].DefaultCellStyle.Font = new Font("Verdana", 10);
+            birimTablo.Columns[1].DefaultCellStyle.Font = new Font("Verdana", 10);
+            birimTablo.Columns[2].DefaultCellStyle.Font = new Font("Verdana", 10);
+            birimTablo.Columns[3].DefaultCellStyle.Font = new Font("Verdana", 10);
+            birimTablo.Columns[4].DefaultCellStyle.Font = new Font("Verdana", 10);
+            birimTablo.Columns[5].DefaultCellStyle.Font = new Font("Verdana", 10);
+            birimTablo.Columns[6].DefaultCellStyle.Font = new Font("Verdana", 10);
         }
         private void DepoSorumlusuKontrol_Load(object sender, EventArgs e)
         {
-           
+            
         }
 
         private void picMinimize_Click(object sender, EventArgs e)
@@ -66,7 +108,9 @@ namespace StokTakip0
 
         private void picGeri_Click(object sender, EventArgs e)
         {
-
+            YöneticiMain yoneticiMain = new YöneticiMain();
+            yoneticiMain.Show();
+            this.Close();
         }
 
         private void picClose_Click(object sender, EventArgs e)
@@ -83,6 +127,13 @@ namespace StokTakip0
         {
             if (birimCombo.SelectedIndex == 0)
             {
+                butonGuncelleDepo.Visible = false;
+                buton4.Visible = false;
+                butonGuncellePersonel.Visible = true;
+
+                silButonPersonel.Visible = true;
+                buton3.Visible = false;
+                silButonDepo.Visible = false;
                 ekleBtn3.Visible = false;
                 ekleBtn1.Visible = true;
                 ekleBtn2.Visible = false;
@@ -90,6 +141,12 @@ namespace StokTakip0
             }
             else if (birimCombo.SelectedIndex == 1)
             {
+                butonGuncelleDepo.Visible = true;
+                buton4.Visible = false;
+                butonGuncellePersonel.Visible = false;
+                silButonDepo.Visible = true;
+                buton3.Visible = false;
+                silButonPersonel.Visible = false;
                 ekleBtn3.Visible = false;
                 ekleBtn1.Visible = false;
                 ekleBtn2.Visible = true;
@@ -109,6 +166,7 @@ namespace StokTakip0
 
         private void birimTablo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             txtBirimAd.Text = birimTablo.Rows[e.RowIndex].Cells[0].Value.ToString();
             txtBirimSoyad.Text = birimTablo.Rows[e.RowIndex].Cells[1].Value.ToString();
             birimSifre.Text = birimTablo.Rows[e.RowIndex].Cells[2].Value.ToString();
@@ -150,13 +208,259 @@ namespace StokTakip0
 
         private void ekleBtn1_Click(object sender, EventArgs e)
         {
-            //personel ekleme işlemleri
+            if (txtTCNo.TextLength == 11)
+            {
+                if (birimTelNo.TextLength == 11)
+                {
+                    if (birimSifre.Text == birimSifre2.Text && birimEposta.Text != "" && txtBirimSoyad.Text != ""
+                     && birimSifre.Text != "" && txtTCNo.Text != "" &&
+                     birimTelNo.Text != "" && txtBirimAd.Text != "" && birimAdres.Text != "")
+                {
+                    baglanti.Open();
+                    string kayit = "INSERT INTO personel(personelAd, personelSoyad,personelSifre,personelEposta, personelTelNo, personelAdres, personelTC) VALUES ('" + txtBirimAd.Text + "', '" + txtBirimSoyad.Text + "','" + birimSifre.Text + "','" + birimEposta.Text + "','" + birimTelNo.Text + "','" + birimAdres.Text + "','" + txtTCNo.Text + "')";
+                    SqlCommand komut = new SqlCommand(kayit, baglanti);
+                    komut.ExecuteNonQuery();
+                    baglanti.Close();
+                    lblmesaj.Visible = true;
+                    lblmesaj.ForeColor = Color.Green;
+                    lblmesaj.Text = "Başarıyla Kaydedildi";
+                    kayitGetirPersonel();
+                }
+                else
+                {
+                    lblmesaj.Visible = true;
+                    lblmesaj.ForeColor = Color.Red;
+                    lblmesaj.Text = "Bilgileri Kontrol Ediniz";
 
+                }
+                baglanti.Close();
+                }
+                else
+                {
+                    lblmesaj.Visible = true;
+                    lblmesaj.ForeColor = Color.Red;
+                    lblmesaj.Text = "Telefon Numarası Bilgilerini Kontrol Ediniz!";
+                }
+            }
+            else
+            {
+                lblmesaj.Visible = true;
+                lblmesaj.ForeColor = Color.Red;
+                lblmesaj.Text = "TC Kimlik Bilgilerini Kontrol Ediniz";
+            }
         }
 
         private void ekleBtn2_Click(object sender, EventArgs e)
         {
-            //depo sorumlusu ekleme işlemleri
+            if (txtTCNo.TextLength == 11)
+            {
+                if (birimTelNo.TextLength == 11)
+                {
+                    //depo sorumlusu ekleme işlemleri
+                    if (birimSifre.Text == birimSifre2.Text && birimEposta.Text != "" && txtBirimSoyad.Text != ""
+                         && birimSifre.Text != "" && txtTCNo.Text != "" &&
+                         birimTelNo.Text != "" && birimCombo.Text != "" && txtBirimAd.Text != "" && birimAdres.Text != "")
+                    {
+                        if (baglanti.State == ConnectionState.Closed)
+                        {
+                            baglanti.Open();
+                            string kayit = "insert into depoSorumlusu(depoSorumlusuAd, depoSorumlusuSoyad,depoSorumlusuSifre,depoSorumlusuEposta, depoSorumlusuTelNo, depoSorumlusuAdres, depoSorumlusuTC) values ('" + txtBirimAd.Text + "', '" + txtBirimSoyad.Text + "','" + birimSifre.Text + "','" + birimEposta.Text + "','" + birimTelNo.Text + "','" + birimAdres.Text + "','" + txtTCNo.Text + "')";
+                            SqlCommand komut = new SqlCommand(kayit, baglanti);
+                            komut.ExecuteNonQuery();
+                            baglanti.Close();
+                            lblmesaj.Visible = true;
+                            lblmesaj.ForeColor = Color.Green;
+                            lblmesaj.Text = "Başarıyla Kaydedildi";
+                            kayitGetirDepoSorumlusu();
+                        }
+
+                        else
+                        {
+                            lblmesaj.Visible = true;
+                            lblmesaj.ForeColor = Color.Red;
+                            lblmesaj.Text = "Bilgileri Kontrol Ediniz";
+                        }
+
+                    }
+                    else
+                    {
+                        lblmesaj.Visible = true;
+                        lblmesaj.ForeColor = Color.Red;
+                        lblmesaj.Text = "Bilgileri Kontrol Ediniz";
+
+                    }
+                    baglanti.Close();
+                }
+                else
+                {
+                    lblmesaj.Visible = true;
+                    lblmesaj.ForeColor = Color.Red;
+                    lblmesaj.Text = "Telefon Numarası Bilgilerini Kontrol Ediniz!";
+                }
+            }
+                else
+                {
+                    lblmesaj.Visible = true;
+                    lblmesaj.ForeColor = Color.Red;
+                    lblmesaj.Text = "TC Kimlik Bilgilerini Kontrol Ediniz!";
+                }
+        }
+
+        private void txtBirimAd_TextChanged(object sender, EventArgs e)
+        {
+ 
+        }
+        void KayıtSil(string numara)
+        {
+            string sql = "DELETE FROM personel WHERE personelTC=@yeni";
+            komut = new SqlCommand(sql, baglanti);
+            komut.Parameters.AddWithValue("@yeni", numara);
+            baglanti.Open();
+            komut.ExecuteNonQuery();
+            baglanti.Close();
+        }
+        void KayıtSil2(string numara)
+        {
+            string sql = "DELETE FROM depoSorumlusu WHERE depoSorumlusuTC=@yeni";
+            komut = new SqlCommand(sql, baglanti);
+            komut.Parameters.AddWithValue("@yeni", numara);
+            baglanti.Open();
+            komut.ExecuteNonQuery();
+            baglanti.Close();
+        }
+        private void silButonPersonel_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow drow in birimTablo.SelectedRows)  //Seçili Satırları Silme
+            {
+                string numara = Convert.ToString(drow.Cells[6].Value);
+                KayıtSil(numara);
+                lblmesaj.Visible = true;
+                lblmesaj.ForeColor = Color.Green;
+                lblmesaj.Text = "Başarıyla Silindi";
+            }
+            kayitGetirPersonel();
+        }
+
+        private void silButonDepo_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow drow in birimTablo.SelectedRows)  //Seçili Satırları Silme
+            {
+                string numara = Convert.ToString(drow.Cells[6].Value);
+                KayıtSil2(numara);
+                lblmesaj.Visible = true;
+                lblmesaj.ForeColor = Color.Green;
+                lblmesaj.Text = "Başarıyla Silindi";
+            }
+            kayitGetirDepoSorumlusu();
+        }
+
+        private void butonGuncellePersonel_Click(object sender, EventArgs e)
+        {
+            if (txtTCNo.TextLength == 11)
+            {
+                if (birimTelNo.TextLength == 11)
+                {
+                    if (birimSifre.Text == birimSifre2.Text && birimEposta.Text != "" && txtBirimSoyad.Text != ""
+                         && birimSifre.Text != "" && txtTCNo.Text != "" &&
+                         birimTelNo.Text != "" && birimCombo.Text != "" && txtBirimAd.Text != "" && birimAdres.Text != "")
+                    {
+                        string ID = txtTCNo.Text;
+                        //personel bilgilerinde güncelleme
+                        if (!string.IsNullOrEmpty(ID)) // ID'nin Boş olup olmadığının kontrolü
+                        {
+                            string sql = "update personel set personelAd = '" + txtBirimAd.Text + "',personelSoyad = '" + txtBirimSoyad.Text + "', personelSifre = '" + birimSifre.Text + "', personelEposta = '" + birimEposta.Text + "', personelTelNo = '" + birimTelNo.Text + "', personelAdres = '" + birimAdres.Text + "' where personelTC = '" + ID + "' ";
+                            SqlCommand komut = new SqlCommand(sql, baglanti);
+
+                            if (baglanti.State != ConnectionState.Open) // bağlantı açık değilse açtırıyoruz.
+                            {
+                                baglanti.Open();
+                            }
+                            komut.ExecuteNonQuery(); // sql sorgusunu işleme koyuyoruz.
+                            baglanti.Close(); // bağlantıyı kapatıyoruz
+                            kayitGetirPersonel();
+                            lblmesaj.Visible = true;
+                            lblmesaj.ForeColor = Color.Green;
+                            lblmesaj.Text = "Başarıyla Güncellendir!";
+                        }
+                    }
+                    else
+                    {
+                        lblmesaj.Visible = true;
+                        lblmesaj.ForeColor = Color.Red;
+                        lblmesaj.Text = "Bilgileri Kontrol Ediniz!";
+
+                    }
+                }
+                else
+                {
+                    lblmesaj.Visible = true;
+                    lblmesaj.ForeColor = Color.Red;
+                    lblmesaj.Text = "Telefon Numarası Bilgilerini Kontrol Ediniz!";
+                }
+            }
+            else
+            {
+                lblmesaj.Visible = true;
+                lblmesaj.ForeColor = Color.Red;
+                lblmesaj.Text = "TC Kimlik Bilgilerini Kontrol Ediniz!";
+            }
+        }
+
+        private void butonGuncelleDepo_Click(object sender, EventArgs e)
+        {
+            if (txtTCNo.TextLength == 11)
+            {
+                if (birimTelNo.TextLength == 11)
+                {
+                    if (birimSifre.Text == birimSifre2.Text && birimEposta.Text != "" && txtBirimSoyad.Text != ""
+                         && birimSifre.Text != "" && txtTCNo.Text != "" &&
+                         birimTelNo.Text != "" && birimCombo.Text != "" && txtBirimAd.Text != "" && birimAdres.Text != "")
+                    {
+                        string ID = txtTCNo.Text;
+                        //personel bilgilerinde güncelleme
+                        if (!string.IsNullOrEmpty(ID)) // ID'nin Boş olup olmadığının kontrolü
+                        {
+                            string sql = "update depoSorumlusu set depoSorumlusuAd = '" + txtBirimAd.Text + "',depoSorumlusuSoyad = '" + txtBirimSoyad.Text + "', depoSorumlusuSifre = '" + birimSifre.Text + "', depoSorumlusuEposta = '" + birimEposta.Text + "', depoSorumlusuTelNo = '" + birimTelNo.Text + "', depoSorumlusuAdres = '" + birimAdres.Text + "' where depoSorumlusuTC = '" + ID + "' ";
+                            SqlCommand komut = new SqlCommand(sql, baglanti);
+
+                            if (baglanti.State != ConnectionState.Open) // bağlantı açık değilse açtırıyoruz.
+                            {
+                                baglanti.Open();
+                            }
+                            komut.ExecuteNonQuery(); // sql sorgusunu işleme koyuyoruz.
+                            baglanti.Close(); // bağlantıyı kapatıyoruz
+                            kayitGetirDepoSorumlusu();
+                            lblmesaj.Visible = true;
+                            lblmesaj.ForeColor = Color.Green;
+                            lblmesaj.Text = "Başarıyla Güncellendir!";
+                        }
+                    }
+                    else
+                    {
+                        lblmesaj.Visible = true;
+                        lblmesaj.ForeColor = Color.Red;
+                        lblmesaj.Text = "Bilgileri Kontrol Ediniz!";
+
+                    }
+                }
+                else
+                {
+                    lblmesaj.Visible = true;
+                    lblmesaj.ForeColor = Color.Red;
+                    lblmesaj.Text = "Telefon Numarası Bilgilerini Kontrol Ediniz!";
+                }
+                }
+                else
+                {
+                    lblmesaj.Visible = true;
+                    lblmesaj.ForeColor = Color.Red;
+                    lblmesaj.Text = "TC Kimlik Bilgilerini Kontrol Ediniz!";
+                }
+            }
+
+        private void buton3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
