@@ -64,7 +64,15 @@ namespace StokTakip0
             firmaTablo.Columns[8].DefaultCellStyle.Font = new Font("Verdana", 10);
             firmaTablo.Columns[9].DefaultCellStyle.Font = new Font("Verdana", 10);
         }
+        public void firmaStokla()
+        {
 
+            baglanti.Open();
+            string kayit2 = "INSERT INTO firmaStok( urunCesidi, urunBarkod, urunBoyutu, urunAdedi) VALUES ('" + urunCesidi.Text + "','" + urunBarkodu.Text + "', '0', '0')";
+            SqlCommand komut2 = new SqlCommand(kayit2, baglanti);
+            komut2.ExecuteNonQuery();
+            baglanti.Close();
+        }
         private void FirmalarKontrol_Load(object sender, EventArgs e)
         {
             kayitGetir();
@@ -91,19 +99,17 @@ namespace StokTakip0
                      firmaVergiNo.Text != "" && firmaAdres.Text != "")
                     {
                         baglanti.Open();
-                        string kayit = "INSERT INTO firmaBilgi(firmaAd, firmaAdres, firmaTelNo , firmaEposta, vergiNo, isTelNo, temsilci) VALUES ('" + firmaAd.Text + "', '" + firmaAdres.Text + "','" + firmaTelNo.Text + "','" + firmaEposta.Text + "','" + firmaVergiNo.Text + "', '" + firmaTel.Text + "', '" + temsilciAdSoyad.Text + "' )";
+                        string kayit = "INSERT INTO firmaBilgi(firmaAd, firmaAdres, firmaTelNo , firmaEposta, urunBarkod, urunCesidi, vergiNo, isTelNo, temsilci) VALUES ('" + firmaAd.Text + "', '" + firmaAdres.Text + "','" + firmaTelNo.Text + "','" + firmaEposta.Text + "','" + urunBarkodu.Text + "','" + urunCesidi.Text + "','" + firmaVergiNo.Text + "', '" + firmaTel.Text + "', '" + temsilciAdSoyad.Text + "' )";
                         SqlCommand komut = new SqlCommand(kayit, baglanti);
                         komut.ExecuteNonQuery();
-
-                        string kayit2 = "INSERT INTO talepStok( urunCesidi, urunBarkodu) VALUES ('" + urunBarkodu.Text + "','" + urunCesidi.Text + "')";
-                        SqlCommand komut2 = new SqlCommand(kayit, baglanti);
-                        komut.ExecuteNonQuery();
+                        
 
                         baglanti.Close();
                         lblmesaj.Visible = true;
                         lblmesaj.ForeColor = Color.Green;
                         lblmesaj.Text = "Başarıyla Kaydedildi";
                         kayitGetir();
+                        firmaStokla();
                     }
                     else
                     {

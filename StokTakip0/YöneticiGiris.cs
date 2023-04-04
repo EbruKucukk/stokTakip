@@ -157,5 +157,11 @@ namespace StokTakip0
         {
 
         }
+
+        private void lblSifreUnut_Click(object sender, EventArgs e)
+        {
+            sifremiUnuttum3 sifreAl3 = new sifremiUnuttum3();
+            sifreAl3.Show();
+        }
     }
 }

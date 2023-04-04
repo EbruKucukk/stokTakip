@@ -62,7 +62,7 @@
             this.picMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picMinimize.Image = ((System.Drawing.Image)(resources.GetObject("picMinimize.Image")));
             this.picMinimize.Location = new System.Drawing.Point(836, 10);
-            this.picMinimize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picMinimize.Margin = new System.Windows.Forms.Padding(2);
             this.picMinimize.Name = "picMinimize";
             this.picMinimize.Size = new System.Drawing.Size(24, 26);
             this.picMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -76,7 +76,7 @@
             this.picClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picClose.Image = ((System.Drawing.Image)(resources.GetObject("picClose.Image")));
             this.picClose.Location = new System.Drawing.Point(872, 2);
-            this.picClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picClose.Margin = new System.Windows.Forms.Padding(2);
             this.picClose.Name = "picClose";
             this.picClose.Size = new System.Drawing.Size(19, 24);
             this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -89,7 +89,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(278, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(290, 258);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -136,7 +136,7 @@
             // 
             this.txtAd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtAd.Location = new System.Drawing.Point(312, 324);
-            this.txtAd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAd.Margin = new System.Windows.Forms.Padding(2);
             this.txtAd.Name = "txtAd";
             this.txtAd.Size = new System.Drawing.Size(191, 23);
             this.txtAd.TabIndex = 1;
@@ -145,7 +145,7 @@
             // 
             this.txtSoyad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtSoyad.Location = new System.Drawing.Point(312, 397);
-            this.txtSoyad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSoyad.Margin = new System.Windows.Forms.Padding(2);
             this.txtSoyad.Name = "txtSoyad";
             this.txtSoyad.Size = new System.Drawing.Size(191, 23);
             this.txtSoyad.TabIndex = 3;
@@ -154,7 +154,7 @@
             // 
             this.txtSifre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtSifre.Location = new System.Drawing.Point(312, 470);
-            this.txtSifre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSifre.Margin = new System.Windows.Forms.Padding(2);
             this.txtSifre.Name = "txtSifre";
             this.txtSifre.Size = new System.Drawing.Size(191, 23);
             this.txtSifre.TabIndex = 5;
@@ -165,7 +165,7 @@
             this.chckBeniHatirla.AutoSize = true;
             this.chckBeniHatirla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.chckBeniHatirla.Location = new System.Drawing.Point(312, 506);
-            this.chckBeniHatirla.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chckBeniHatirla.Margin = new System.Windows.Forms.Padding(2);
             this.chckBeniHatirla.Name = "chckBeniHatirla";
             this.chckBeniHatirla.Size = new System.Drawing.Size(90, 19);
             this.chckBeniHatirla.TabIndex = 6;
@@ -183,6 +183,7 @@
             this.lblSifreUnut.Size = new System.Drawing.Size(96, 15);
             this.lblSifreUnut.TabIndex = 7;
             this.lblSifreUnut.Text = "Şifremi Unuttum";
+            this.lblSifreUnut.Click += new System.EventHandler(this.lblSifreUnut_Click);
             // 
             // btnGirişYap
             // 
@@ -192,7 +193,7 @@
             this.btnGirişYap.Image = ((System.Drawing.Image)(resources.GetObject("btnGirişYap.Image")));
             this.btnGirişYap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGirişYap.Location = new System.Drawing.Point(312, 547);
-            this.btnGirişYap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGirişYap.Margin = new System.Windows.Forms.Padding(2);
             this.btnGirişYap.Name = "btnGirişYap";
             this.btnGirişYap.Size = new System.Drawing.Size(190, 38);
             this.btnGirişYap.TabIndex = 8;
@@ -206,7 +207,7 @@
             this.picGeri.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picGeri.Image = ((System.Drawing.Image)(resources.GetObject("picGeri.Image")));
             this.picGeri.Location = new System.Drawing.Point(9, 2);
-            this.picGeri.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picGeri.Margin = new System.Windows.Forms.Padding(2);
             this.picGeri.Name = "picGeri";
             this.picGeri.Size = new System.Drawing.Size(24, 26);
             this.picGeri.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -220,7 +221,7 @@
             this.picEye.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picEye.Image = ((System.Drawing.Image)(resources.GetObject("picEye.Image")));
             this.picEye.Location = new System.Drawing.Point(500, 470);
-            this.picEye.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picEye.Margin = new System.Windows.Forms.Padding(2);
             this.picEye.Name = "picEye";
             this.picEye.Size = new System.Drawing.Size(20, 22);
             this.picEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -234,7 +235,7 @@
             this.picHide.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picHide.Image = ((System.Drawing.Image)(resources.GetObject("picHide.Image")));
             this.picHide.Location = new System.Drawing.Point(500, 470);
-            this.picHide.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picHide.Margin = new System.Windows.Forms.Padding(2);
             this.picHide.Name = "picHide";
             this.picHide.Size = new System.Drawing.Size(20, 22);
             this.picHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -247,7 +248,7 @@
             // 
             this.picError.Image = ((System.Drawing.Image)(resources.GetObject("picError.Image")));
             this.picError.Location = new System.Drawing.Point(314, 595);
-            this.picError.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picError.Margin = new System.Windows.Forms.Padding(2);
             this.picError.Name = "picError";
             this.picError.Size = new System.Drawing.Size(20, 23);
             this.picError.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -293,7 +294,7 @@
             this.Controls.Add(this.picHide);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DepoSorumlusuGiris";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DepoSorumlusuGiris";

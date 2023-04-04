@@ -177,6 +177,7 @@
             this.lblSifreUnut.Size = new System.Drawing.Size(96, 15);
             this.lblSifreUnut.TabIndex = 45;
             this.lblSifreUnut.Text = "Şifremi Unuttum";
+            this.lblSifreUnut.Click += new System.EventHandler(this.lblSifreUnut_Click);
             // 
             // chckBeniHatirla
             // 

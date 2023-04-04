@@ -65,6 +65,18 @@ namespace StokTakip0
                 SqlDataAdapter DA2 = new SqlDataAdapter(cmd2);
                 DataSet DS2 = new DataSet();
                 DA2.Fill(DS2);
+                stokDurumuTablo.EnableHeadersVisualStyles = false;
+                Color lacivert = ColorTranslator.FromHtml("#031A3D");
+                stokDurumuTablo.ColumnHeadersDefaultCellStyle.BackColor = lacivert;
+                stokDurumuTablo.Columns[0].DefaultCellStyle.BackColor = Color.Lavender;
+                stokDurumuTablo.Columns[1].DefaultCellStyle.BackColor = Color.Lavender;
+                stokDurumuTablo.Columns[2].DefaultCellStyle.BackColor = Color.Lavender;
+                stokDurumuTablo.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+                stokDurumuTablo.ColumnHeadersDefaultCellStyle.Font = new Font("tahoma", 11);
+                stokDurumuTablo.Columns[0].DefaultCellStyle.Font = new Font("Verdana", 10);
+                stokDurumuTablo.Columns[1].DefaultCellStyle.Font = new Font("Verdana", 10);
+                stokDurumuTablo.Columns[2].DefaultCellStyle.Font = new Font("Verdana", 10);
 
                 stokDurumuTablo.DataSource = DS2.Tables[0]; // stokdurumu tablosundaki 0. indeksteki değeri yani ürün çeşidini çeker
                 stokDurumuTablo.AllowUserToAddRows = false; //datagriedviewa kullanıcının manuel veri eklemesini engeller

@@ -154,5 +154,11 @@ namespace StokTakip0
         {
 
         }
+
+        private void lblSifreUnut_Click(object sender, EventArgs e)
+        {
+            SifremiUnuttum sifreYenile = new SifremiUnuttum();
+            sifreYenile.Show();
+        }
     }
 }

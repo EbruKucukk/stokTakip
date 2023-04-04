@@ -166,5 +166,11 @@ namespace StokTakip0
             picEye.Visible = false;
             picHide.Visible = true;
         }
+
+        private void lblSifreUnut_Click(object sender, EventArgs e)
+        {
+            sifremiUnuttum2 sifreAl2 = new sifremiUnuttum2();
+            sifreAl2.Show();
+        }
     }
 }
