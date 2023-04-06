@@ -48,7 +48,7 @@
             this.firmaButon.FlatAppearance.BorderSize = 0;
             this.firmaButon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.firmaButon.ForeColor = System.Drawing.Color.White;
-            this.firmaButon.Location = new System.Drawing.Point(561, 421);
+            this.firmaButon.Location = new System.Drawing.Point(539, 421);
             this.firmaButon.Name = "firmaButon";
             this.firmaButon.Size = new System.Drawing.Size(157, 44);
             this.firmaButon.TabIndex = 0;
@@ -62,7 +62,7 @@
             this.depoButon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.depoButon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.depoButon.ForeColor = System.Drawing.Color.White;
-            this.depoButon.Location = new System.Drawing.Point(182, 421);
+            this.depoButon.Location = new System.Drawing.Point(177, 421);
             this.depoButon.Name = "depoButon";
             this.depoButon.Size = new System.Drawing.Size(157, 44);
             this.depoButon.TabIndex = 1;

@@ -202,7 +202,7 @@ namespace StokTakip0
         }
         void KayıtSil(string numara)
         {
-            string sql = "DELETE FROM firmaBilgi WHERE urunBarkod=@yeni";
+            string sql = "DELETE FROM firmaBilgi WHERE firmaID=@yeni";
             komut = new SqlCommand(sql, baglanti);
             komut.Parameters.AddWithValue("@yeni", numara);
             baglanti.Open();
@@ -213,7 +213,7 @@ namespace StokTakip0
         {
             foreach (DataGridViewRow drow in firmaTablo.SelectedRows)  //Seçili Satırları Silme
             {
-                string numara = Convert.ToString(drow.Cells[5].Value);
+                string numara = Convert.ToString(drow.Cells[0].Value);
                 KayıtSil(numara);
                 lblmesaj.Visible = true;
                 lblmesaj.ForeColor = Color.Green;

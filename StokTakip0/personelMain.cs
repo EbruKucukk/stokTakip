@@ -65,6 +65,12 @@ namespace StokTakip0
                 SqlDataAdapter DA2 = new SqlDataAdapter(cmd2);
                 DataSet DS2 = new DataSet();
                 DA2.Fill(DS2);
+
+                stokDurumuTablo.DataSource = DS2.Tables[0]; // stokdurumu tablosundaki 0. indeksteki değeri yani ürün çeşidini çeker
+
+                //datagriedviewa kullanıcının manuel veri eklemesini engeller
+                stokDurumuTablo.AllowUserToAddRows = false; 
+
                 stokDurumuTablo.EnableHeadersVisualStyles = false;
                 Color lacivert = ColorTranslator.FromHtml("#031A3D");
                 stokDurumuTablo.ColumnHeadersDefaultCellStyle.BackColor = lacivert;
@@ -77,9 +83,6 @@ namespace StokTakip0
                 stokDurumuTablo.Columns[0].DefaultCellStyle.Font = new Font("Verdana", 10);
                 stokDurumuTablo.Columns[1].DefaultCellStyle.Font = new Font("Verdana", 10);
                 stokDurumuTablo.Columns[2].DefaultCellStyle.Font = new Font("Verdana", 10);
-
-                stokDurumuTablo.DataSource = DS2.Tables[0]; // stokdurumu tablosundaki 0. indeksteki değeri yani ürün çeşidini çeker
-                stokDurumuTablo.AllowUserToAddRows = false; //datagriedviewa kullanıcının manuel veri eklemesini engeller
 
                 urunCesidi.Text = DS2.Tables[0].Rows[0][0].ToString(); // yukarıda çektiğimiz 0. indeks değerini urunCesidi textbox'ına aktarır otomatik olarak aktarır
             }
