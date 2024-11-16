@@ -1,5 +1,9 @@
 <h3 align="center">Stock Tracking Automation</h3>
 
+- 📝 An tracking automation system. [This project, which we created using C# and MS SQL within the scope of university undergraduate courses, includes an automation system that can track stock within a company.](This project, which we created using C# and MS SQL within the scope of university undergraduate courses, includes an automation system that can track stock within a company.)
+
+- 〰️ The aim is to provide an interface where automation controls can be performed by connecting to a certain database in order to track and manage a company's stock values. **We used MS SQL Server for our database control.**
+
 <h3 align="left">Connect with me:</h3>
 <p align="left">
 </p>
